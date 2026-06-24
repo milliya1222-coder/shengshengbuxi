@@ -126,6 +126,18 @@
   .breath h3{font-size:1.22rem;margin-bottom:10px}
   .breath p{color:var(--ink-soft);font-size:.96rem}
 
+  /* ===== Gallery ===== */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .shot{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--sand)}
+  .shot img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .45s ease}
+  .shot:hover img{transform:scale(1.05)}
+  .shot figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:30px 16px 13px;
+    color:#fff;font-size:.92rem;font-family:"LXGW WenKai TC",serif;letter-spacing:.02em;
+    background:linear-gradient(180deg,transparent,rgba(67,60,56,.74));
+  }
+  .gallery-note{text-align:center;color:var(--ink-soft);font-size:.84rem;margin-top:20px}
+
   /* ===== Schedule table ===== */
   .sched{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
   table{width:100%;border-collapse:collapse;font-size:.98rem}
@@ -207,6 +219,7 @@
   @media(max-width:860px){
     .grid4,.seasons{grid-template-columns:repeat(2,1fr)}
     .speakers{grid-template-columns:repeat(2,1fr)}
+    .gallery{grid-template-columns:repeat(2,1fr)}
     .rhythm{grid-template-columns:1fr}
     .team{grid-template-columns:1fr}
   }
@@ -355,6 +368,24 @@
         <p>不舉辦公開活動。把時間留給參與者消化所得，也讓策展團隊回歸生活、整合資源。這是生命成長中不可或缺的「空白」。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ 活動掠影 ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">活 動 掠 影</span>
+      <h2>現場的溫度</h2>
+      <p>女人圍坐成圈，彼此聆聽、彼此見證——這是我們一直在做、也想邀妳一起的事。</p>
+    </div>
+    <div class="gallery">
+      <figure class="shot"><img src="assets/gallery-circle.jpg" alt="女人圍圈分享故事" loading="lazy"><figcaption>圍圈・聆聽彼此的故事</figcaption></figure>
+      <figure class="shot"><img src="assets/gallery-altar.jpg" alt="新月女人圈的祭壇" loading="lazy"><figcaption>新月・女人圈的祭壇</figcaption></figure>
+      <figure class="shot"><img src="assets/gallery-ritual.jpg" alt="紅線祈福儀式" loading="lazy"><figcaption>紅線・把祝福繫上彼此</figcaption></figure>
+      <figure class="shot"><img src="assets/gallery-dance.jpg" alt="媽媽寶寶舞動工作坊" loading="lazy"><figcaption>舞動・回到自己的身體</figcaption></figure>
+    </div>
+    <p class="gallery-note">＊ 為保護參與者隱私，照片中部分臉孔已做模糊處理。</p>
   </div>
 </section>
 
