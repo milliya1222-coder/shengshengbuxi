@@ -21,7 +21,22 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:"Noto Serif TC","LXGW WenKai TC",serif;color:var(--ink);background:var(--cream);line-height:1.95;-webkit-font-smoothing:antialiased}
+  /* 背景照片・極淡（月光下的女人圈氣息） */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:url('assets/gallery-circle.jpg') center center / cover no-repeat;
+    opacity:.10;filter:saturate(.7);
+  }
+  body{
+    font-family:"Noto Serif TC","LXGW WenKai TC",serif;color:var(--ink);line-height:1.95;-webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(120% 70% at 50% -8%, rgba(216,193,154,.20), transparent 55%),   /* 月光・自上方灑下 */
+      radial-gradient(70% 50% at 88% 8%, rgba(156,132,114,.12), transparent 60%),      /* 鼠尾草綠調 */
+      radial-gradient(70% 50% at 8% 26%, rgba(200,154,146,.12), transparent 62%),      /* 陶土粉調 */
+      radial-gradient(120% 65% at 50% 108%, rgba(122,101,90,.16), transparent 60%),    /* 大地・自下方浮起 */
+      linear-gradient(180deg, var(--cream) 0%, #f4ede1 55%, #efe6d7 100%);
+    background-attachment:fixed;
+  }
   h1,h2,h3,.display{font-family:"LXGW WenKai TC","Noto Serif TC",serif;font-weight:400;letter-spacing:.02em}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
   .narrow{max-width:760px;margin:0 auto}
@@ -62,7 +77,7 @@
   .next{display:inline-block;margin-top:22px;padding:.5em 1.3em;border:1px solid rgba(216,193,154,.4);border-radius:999px;color:#e8d3ac;font-size:.92rem;letter-spacing:.05em}
 
   section{padding:74px 0}
-  section.alt{background:linear-gradient(180deg,#fff,var(--cream))}
+  section.alt{background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(248,242,233,.30))}
   .sec-head{text-align:center;margin-bottom:44px}
   .sec-head .kicker{color:var(--clay-deep);letter-spacing:.32em;font-size:.8rem;display:block;margin-bottom:12px}
   .sec-head h2{font-size:clamp(1.7rem,4vw,2.3rem);color:var(--ink)}
@@ -100,6 +115,7 @@
   .date .d b{display:block;font-size:1.5rem;color:var(--ink)}
   .date .d span{font-size:.74rem;letter-spacing:.1em}
   .date .t{font-size:.95rem;color:var(--ink-soft)}
+  .date .t .lead-by{display:block;margin-top:4px;font-size:.78rem;color:var(--clay-deep);letter-spacing:.02em}
   .sched-note{text-align:center;color:var(--ink-soft);font-size:.88rem;margin-top:22px}
 
   /* 適合誰 */
@@ -122,6 +138,9 @@
   .lead-card p{font-size:.92rem;color:var(--ink-soft);line-height:1.78;margin-bottom:9px}
   .lead-card .ig{text-decoration:none;color:var(--clay-deep);font-size:.84rem}
   .lead-card .ig:hover{text-decoration:underline}
+  .wombmoon-note{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;box-shadow:var(--shadow);text-align:center}
+  .wombmoon-note h3{font-size:1.18rem;margin-bottom:10px}
+  .wombmoon-note p{font-size:.95rem;color:var(--ink-soft);line-height:1.85;max-width:560px;margin:0 auto}
 
   footer{background:var(--night);color:#cdc3cc;text-align:center;padding:44px 24px;font-size:.92rem}
   footer .brand{font-family:"LXGW WenKai TC",serif;font-size:1.25rem;color:#fff;margin-bottom:8px}
@@ -149,9 +168,10 @@
   <div class="wrap">
     <div class="moon" aria-hidden="true"></div>
     <img class="hero-logo" src="assets/logo-cut.png" alt="生生不息 • 溫柔孕育圈">
-    <div class="eyebrow">New Moon Gathering</div>
+    <div class="eyebrow">New Moon Gathering &nbsp;·&nbsp; with Womb-Moon</div>
     <h1>公 益 女 人 圈</h1>
     <p class="hero-sub">每個月新月，我們一起，線上調頻</p>
+    <p class="hero-sub" style="font-size:1rem;color:#cdbfc6;margin-top:8px;letter-spacing:.04em">與 Womb-Moon 神聖女人圈引導師一同帶領</p>
     <p class="hero-lead">在月亮最暗、最安靜的那一晚，我們不急著向前。一起回到呼吸、回到身體，把過度向外奔忙的頻率，慢慢調回自己。這是一份免費的邀請——給每一個需要喘口氣、也需要被接住的妳。</p>
     <div class="hero-cta">
       <a class="btn btn-moon" href="#join">報名最近一場新月聚會</a>
@@ -175,6 +195,9 @@
     </p>
     <p class="body-p">
       我們是陪產員，也是母親。我們知道，女人的日子常常是向外的：照顧、給予、把自己排在最後。所以我們留下每個月的新月夜，線上相聚，圍成一個圈——在這裡沒有人是專家，每個人都被聽見。妳不需要準備什麼，只要帶著這個月的自己，來就好。
+    </p>
+    <p class="body-p" style="margin-top:18px">
+      這一季的公益女人圈，由我們與 <b>Womb-Moon 神聖女人圈</b>（由 Zoya 創立）的認證引導師一同帶領。每個月，由不同的 Womb-Moon 姊妹接力，把這個圈撐得更深、更溫柔。
     </p>
   </div>
 </section>
@@ -251,14 +274,14 @@
       <p>跟著月亮，每個月一次，為自己留一個晚上。</p>
     </div>
     <div class="dates">
-      <div class="date"><div class="d"><b>7/14</b><span>週二</span></div><div class="t">🌑 七月新月・夏的萌芽</div></div>
-      <div class="date"><div class="d"><b>8/13</b><span>週四</span></div><div class="t">🌑 八月新月</div></div>
-      <div class="date"><div class="d"><b>9/11</b><span>週五</span></div><div class="t">🌑 九月新月</div></div>
-      <div class="date"><div class="d"><b>10/8</b><span>週四</span></div><div class="t">🌑 十月新月・秋的收穫</div></div>
-      <div class="date"><div class="d"><b>11/9</b><span>週一</span></div><div class="t">🌑 十一月新月</div></div>
-      <div class="date"><div class="d"><b>12/9</b><span>週三</span></div><div class="t">🌑 十二月新月・冬的回歸</div></div>
+      <div class="date"><div class="d"><b>7/14</b><span>週二</span></div><div class="t">🌑 七月新月・夏的萌芽<small class="lead-by">帶領：欣妙 ＆ 宥妤（Womb-Moon 引導師）</small></div></div>
+      <div class="date"><div class="d"><b>8/13</b><span>週四</span></div><div class="t">🌑 八月新月<small class="lead-by">帶領：Womb-Moon 引導師</small></div></div>
+      <div class="date"><div class="d"><b>9/11</b><span>週五</span></div><div class="t">🌑 九月新月<small class="lead-by">帶領：Womb-Moon 引導師</small></div></div>
+      <div class="date"><div class="d"><b>10/8</b><span>週四</span></div><div class="t">🌑 十月新月・秋的收穫<small class="lead-by">帶領：Womb-Moon 引導師</small></div></div>
+      <div class="date"><div class="d"><b>11/9</b><span>週一</span></div><div class="t">🌑 十一月新月<small class="lead-by">帶領：Womb-Moon 引導師</small></div></div>
+      <div class="date"><div class="d"><b>12/9</b><span>週三</span></div><div class="t">🌑 十二月新月・冬的回歸<small class="lead-by">帶領：Womb-Moon 引導師</small></div></div>
     </div>
-    <p class="sched-note">＊ 各場確切開始時間（平日晚上為主）以報名後的通知為準。</p>
+    <p class="sched-note">＊ 每場皆由 Womb-Moon 神聖女人圈的引導師帶領（七月為欣妙＆宥妤），每場帶領人於報名通知中公佈。各場確切開始時間（平日晚上為主）亦以通知為準。</p>
   </div>
 </section>
 
@@ -293,9 +316,10 @@
   <div class="wrap narrow">
     <div class="sec-head" style="margin-bottom:30px">
       <span class="kicker">帶 領 妳 的 人</span>
-      <h2 style="font-size:1.5rem">欣妙 ＆ 宥妤</h2>
-      <p>這個圓圈，由我們兩個一起為妳撐著。</p>
+      <h2 style="font-size:1.5rem">每月新月，由 Womb-Moon 神聖女人圈引導師帶領</h2>
+      <p>七月，由欣妙＆宥妤一起為妳撐起這個圈；八月起，邀請 Womb-Moon 女人圈的姊妹們，一場一場接力，把這個圓圈延續下去。她們都是 Womb-Moon 認證的引導師。</p>
     </div>
+    <p style="text-align:center;color:var(--clay-deep);letter-spacing:.18em;font-size:.82rem;margin-bottom:18px">七 月 場・帶 領</p>
     <div class="leaders">
       <div class="lead-card">
         <div class="ava"><img src="assets/ava-milliya.png" alt="欣妙"></div>
@@ -316,13 +340,18 @@
         </div>
       </div>
     </div>
+    <p style="text-align:center;color:var(--clay-deep);letter-spacing:.18em;font-size:.82rem;margin:36px 0 18px">八 月 起・接 力 帶 領</p>
+    <div class="wombmoon-note">
+      <h3>關於 Womb-Moon 神聖女人圈</h3>
+      <p>Womb-Moon 神聖女人圈，由 Zoya 創立，是一個陪伴女性回到身體、子宮與月亮本質的神聖傳承。八月之後的每一場新月夜，我們邀請 Womb-Moon 的認證引導師接力帶領——她們各自帶著不同的養分與陪伴方式，讓每個月的圓圈都有新的溫度。每一場的帶領人，會在報名通知中與妳相見。</p>
+    </div>
   </div>
 </section>
 
 <!-- ============ Footer ============ -->
 <footer>
   <div class="brand">生生不息 • 溫柔孕育圈</div>
-  <div>公益女人圈　|　每月新月・線上調頻　|　帶領：欣妙、宥妤</div>
+  <div>公益女人圈　×　Womb-Moon 神聖女人圈　|　每月新月・線上調頻　|　帶領：Womb-Moon 引導師（七月・欣妙＆宥妤）</div>
   <a class="home" href="index.html">← 回到溫柔孕育圈總覽</a>
   <div class="small">© 2026 Gentle Birthing Circle　·　本頁為活動介紹用途，場次時間以報名通知為準</div>
 </footer>
